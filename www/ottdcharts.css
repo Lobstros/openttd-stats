@@ -1,0 +1,48 @@
+.resulttable th, .resulttable td {
+    padding: 6px 8px;
+}
+
+.swatch {
+    width: 16px;
+    height: 16px;
+}
+
+td:nth-child(4), td:nth-child(5) {
+    text-align: right;
+}
+
+.axis path {
+    fill: none;
+    stroke: #888888;
+}
+
+.axis text {
+    font-family: sans-serif;
+    fill: #284028;
+    font-size: 0.85em;
+}
+
+.legend text {
+    font-family: sans-serif;
+    fill: #284028;
+}
+
+.tick {
+}
+
+.cheevlist li {
+    clear: both;
+}
+
+.cheev {
+    width: 48px;
+    border: 2px solid black;
+    border-radius: 6px;
+}
+
+.cheev, .cheevtext {
+    height: 48px;
+    float: left;
+    padding: 4px;
+    margin: 4px;
+}

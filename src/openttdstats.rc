@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+case $1 in
+
+    start)
+        echo "starting"
+        screen -S openttd openttd -D
+        ;;
+
+    getdata)
+        # Send commands to OTTD console
+        # "companies" to print info and "script" to log it.
+        screen -p openttd -X stuff $'script ottdstats.log\ncompanies\nscript\n'
+
+        # Give the above 3 seconds to complete. Man this is hacky.
+        sleep 3
+
+        # Generate JSON from above log and place in web directory
+        cat $HOME/ottdstats.log | $HOME/bin/ottd_logparse.py > $HOME/www/openttd2/ottddata.js
+        ;;
+
+esac
